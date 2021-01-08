@@ -2,15 +2,13 @@ import { Collection, MongoClient } from 'mongodb';
 import { ItemType } from '../types/item';
 
 const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_HOST } = process.env;
-
-const url = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOST}/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://AnatoliyAA:MKjjTNNv84iRr87@cluster0.qxb9t.mongodb.net/todos`
 
 const dbName = 'test';
 const collectionName = 'todos';
 
 const getMongoInstance = async () => {
   const client = await MongoClient.connect(url);
-
   return client.db(dbName);
 }
 
